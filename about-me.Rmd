@@ -1,114 +1,157 @@
 ---
 title: "About Me"
-author: "Insert Name Here"
+author: "Tony Schuh"
 output:
-  html_document:
-    toc: yes
   word_document:
     toc: yes
   pdf_document:
+    toc: yes
+  html_document:
     toc: yes
 bibliography: references.bib
 ---
 
 # Who I am and where I came from
 
-First off, replace "Insert Name Here" in the YAML header with your name.
-It has to be surrounded by double quotation marks. 
-Briefly tell us a little background about yourself, and how
-you ended up becoming a student at CSU and taking this class.
-Put in a hypertext link to your undergraduate institution.  
+I grew up in a small town in northern Wisconsin. I have a bit of experience using 
+Ubuntu Linux from when I was a teenager (~2010). My uncle gave me his old computer and I was allowed 
+to keep it in my room. I mainly used the computer for pirating music and movies,
+and quickly found that Windows was not well suited to these enterprises. I eventually 
+turned that computer into a media server which would allow me to remotely access
+my pirated material from other devices. Since I lost my appetite for these nefarious 
+activities, I have not touched a linux machine. 
 
-Include a numbered list of your top-four favorite leisure activities, like this:
+I attended the University of Wisconsin: La crosse for my undergrad degree where I 
+majored in Cell and Molecular Biology. During my undergrad I took an intro to 
+computer science class where I learned the principals of coding and how to use Java.
+After I graduated, I moved to Egg Harbor Wi, where I spent a year working as a brewer 
+at Shipwrecked Brewpub and figuring out what I wanted to do with my life. I eventually 
+became tired of being perpetually broke and secured a job at Mayo Clinic in Rochester
+Mn, working in their Clinical Genomics Lab; first as a technologist, then as a lead 
+technologist, and finally as a technical specialist. While there I learned a lot 
+about lab work and NGS, and a bit about bioinformatics and IT.I also taught myself 
+how to use VBA so I could create time saving excel macros in VBA for my lab work. 
 
-1. My favorite
-1. Second favorite
-1. third favorite
-1. fourth favorite
+After 5 years at Mayo Clinic, I once again decided it was time for a career change
+and here I am now at CSU studying plant breeding and genetics. 
 
+1. Gardening
+1. Reading
+1. Hiking 
+1. Cross Country Skiing
+1. Finding good restaurants 
+1. Snowboarding
 
-Include a picture (jpg or png) of yourself, to get some practice in inserting
-images into RMarkdown. See the example to see how that can be done.
-Note that JPEGs that include EXIF information might be incorrectly rotated.
-That is OK if you can't figure out how to fix it.
+Here is a picture of me making crosses last summer:
 
-
-
-
+```{r me_pic, echo=FALSE, out.width="500px"}
+knitr::include_graphics("images/Tony.png", auto_pdf = TRUE)
+```
 
 # Research Interests
 
-Brief description of your research interests.
+I am interested in learning about and improving Global and U.S. food systems with an emphasis on food security and sustainability. My current research centers on clarifying the connections between genotype and phenotype for early season chilling tolerance in sorghum; an important trait with potential to contribute to drought avoidance in U.S. sorghum farming.
 
 ## Influential papers
 
-Describe two papers that have been very influential in your
-research.  The main purpose of this is learning how to
-cite literature in RMarkdown.  You will have to add the citations
-to `references.bib` in BibTeX format, and then also cite them.
-
-An easy way to get the paper in BibTeX format is to find it on
-Google Scholar.  Then, under the paper's link, click on the big 
-fat quotation marks, and then choose the BibTex link at the bottom
-of the page.  Then copy the contents into `references.bib`.  For example
-you might paste this into `references.bib`.
-```
-@article{richardson1997bayesian,
-  title={On Bayesian analysis of mixtures with an unknown number of components (with discussion)},
-  author={Richardson, Sylvia and Green, Peter J},
-  journal={Journal of the Royal Statistical Society: series B (statistical methodology)},
-  volume={59},
-  number={4},
-  pages={731--792},
-  year={1997},
-  publisher={Wiley Online Library}
-}
-```
-Note the string before the comma on the first line.  That is the cite key.
-Once you have done that, you can cite it by including `@richardson1997bayesian`
-if you don't want the name in parenthesis, like, "As @richardson1997bayesian introduced in
-their landmark paper."  On the other hand, you can use `[@richardson1997bayesian]` if
-you do want it all in parentheses, like, "Reversible jump MCMC has been previously applied
-to the analysis of mixtures [@richardson1997bayesian]."
-
+I am pretty new to research. So far, there are two papers which are influential to 
+what I am currently doing as my current research builds upon them. The first one @marla2019genetic
+is a mapping experiment of chilling tolerance QTL, and the second one, @marla2017comparative is a comparative lipidome-transcriptome
+experiment of chilling tolerant germplasm. 
 
 ## The mathematics behind my research
 
-It is easy to write complex mathematics using a mathematical typesetting
-engine called TeX.  Write two displayed equations that are relevant
-to your work.  For a quick primer on TeX and LaTeX you can
-download [this cheatsheet](https://users.dickinson.edu/~richesod/latex/latexcheatsheet.pdf)
-and then fiddle with including things between the double dollar signs below:
+This is the breeders equation. It describes the response in the next generation for a given level of heritability and selection
 $$
-\cos\theta + i\sin\theta = e^{i\theta}
+R = h_2S
 $$
-or here:
+These are the Hardy Weinberg equations  
+
 $$
-\lim_{n\rightarrow \infty} \frac{1}{n}\sum_{i=1}^n X_i = EX
+p^2+2pq+q^2 = 1 \text{ and } p+q=1
 $$
 
 ## My computing experience
 
-Describe any experience you have with any programming languages.
-Include a snippet of code in two different languages using a
-non-evaluated code block.  This can be something you have previously
-written, or, if you don't have any, then find and copy a few lines of code
-off the web.
+I learned Java during my undergrad in an introduction to computer science course. 
+During my time at Mayo Clinic I also learned VBA to create time saving excel macros.
+I have learned R here at CSU to some degree.
 
+
+Here is a the begining of my code which I use to create greenhouse experiment layout
+
+```sh
+#set working directory
+setwd("G:/.shortcut-targets-by-id/0B30URweoz3o4YTB4NlNKdlItNmc/Morris lab/Tony Lab Folder/Experiments/4_GCOptimization/Rep1/WD")
+Experiment_ID<- "GC_Optimization_4.1"
+#enter growth chamber IDs
+Growth_Chamber_ID <- c("GC1",
+                       "GC2")
+#enter treatments (corresponding to growth chambers above)
+Treatment<- c("Optimal", 
+              "Chilling")
+#Enter number of trays that will be used for each treatment
+TrayPerTreatment <- c("T1")
+#enter number of pots per row in a tray
+Tray_Width <- 3
+#enter number of pots per column in a tray
+Tray_height <- 10
+#enter genotypes being used per treatment per replicate (below)
+Genotype <- c("BTX623",
+              "HKZ",
+              "ADV_G2275")
+#enter how many times each genotype should be repeated per treatment 
+GenotypeReplicates <- 10
+#Change seed for unique layout
+seed <- 10
+#calculate how many pots per tray based on user entry
+potPerTray<- Tray_Width*Tray_height
+
+
+#replicate each genotype per user entry 
+#Genotype variable now contains the genotypes for an entire treatment
+Genotype <- rep(Genotype, each = GenotypeReplicates)
+#save the number of genotypes at this point as it represents the number of 
+#genotypes per treatment
+numGenotypes <- length(Genotype)
+#initilize blank temporary vector for the loop below
+temp2 <- c()
+#find how many treatments were entered by the user
+numTreatment <- length(Treatment)
+#find the number of trays per treatment that were entered by the user
+numTray <- length(TrayPerTreatment)
+```
+I don't have any examples of the code I wrote in VBA as it was not on my personal
+computer, but here is an example I copied from the internet that will highlight 
+alternate excel rows.
+
+```sh
+Sub highlightAlternateRows()
+Dim rng As Range
+For Each rng In Selection.Rows
+If rng.Row Mod 2 = 1 Then
+rng.Style = "20% -Accent1"
+rng.Value = rng ^ (1 / 3)
+Else
+End If
+Next rng
+End Sub
+```
 ## What I hope to get out of this class
 
-Give me a bullet list of three things:
 
-* This
-* That
-* Another
+* Learn to align genomes
+* Get an introduction to the supercomputer
+* Become better at using R
 
 # Evaluating some R code
 
-Here, please evaluate some R code to make a plot or a figure.
-The goal here is just to realize that you can imbed R code
-within fenced code blocks and get the output rendered into
-the document.
+.
+```{r}
+counts <- table(mtcars$gear)
+barplot(counts, main="Car Distribution",
+   xlab="Number of Gears")
+```
 
 # Citations
 
